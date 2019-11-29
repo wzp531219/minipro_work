@@ -1,0 +1,76 @@
+<!--pages/home/home.wxml-->
+<!-- <text>pages/home/home.wxml</text> -->
+<view class="wrap">
+  <!-- 轮播图 -->
+  <view class="page-body">
+    <view class="home_wiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{activecolor}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item class='home_swiper_item'>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 功能模块 -->
+  <view class="module_wrap">
+    <block wx:for='{{moduleList}}' wx:key="*this">
+      <view class="module_item">
+        <view class="module_box">
+          <image class="module_img" src='{{item.imgUrl}}'></image>
+        </view>
+        <view class="cl666 fz27 module_tit">{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 分割线 -->
+  <view class="cut-off_rule bgf5f5f5"></view>
+  <!-- 限时秒购 -->
+  <view class="limited_purchase">
+    <view class="limited_top fx-space-bet">
+      <view class="limited_top_l">
+        <image class="purchase_icon" src='../../images/index/purchase.png'></image>
+        <text class="cl333">限时秒购</text>
+      </view>
+      <view class="limited_top_r">
+        <text class="cl999">距结束</text>
+        <view class="limited_top_time fx-cen txt-cen cl999">
+          <view class="limited_top_block bgeee fz19 cl333">30</view>:
+          <view class="limited_top_block bgeee fz19 cl333">08</view>:
+          <view class="limited_top_block bgeee fz19 cl333">42</view>
+        </view>
+      </view>
+    </view>
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+      <view class="fx-cen limited_box">
+        <block wx:for='{{limitedList}}' wx:key="*this">
+          <view class="limited_item">
+            <view class="limited_icon">
+              <image class="limited_img" src='{{item.imgUrl}}'></image>
+            </view>
+            <view class="cl666 fz27 limited_tit fx-space-bet">
+              <text class="cl333 fw">￥{{item.discountedPrice}}</text>
+              <text class="cl999">￥{{item.couponMarketPrice}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 分割线 -->
+  <view class="cut-off_rule bgf5f5f5"></view>
+  <view class="subClass_wrap fx-space-bet">
+    <scroll-view scroll-x scroll-with-animation="true" style="white-space: nowrap;width: 100%">
+      <view class="subClass_box fx-space-bet">
+        <block wx:for="{{subClassList}}" wx:key="*this">
+          <view bindtap="switchClassEvent" data-ind="{{index}}" class="{{index == activeSubClass ? 'cl333 fw' : 'cl666'}} subClass_item fz30">{{item.subClassName}}</view>
+          <!-- <view class="bot_active_line"></view> -->
+          <view class="bot_select_bar" style="transform:translate3d({{tabTransNum}}rpx, 0rpx, 0rpx)">
+            <view class="bot_active_line" />
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+/* 弹性盒, 默认横轴排列，从左向右 */
+.fx{
+  display: flex;
+}
+.fx-cen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fx-space-bet{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 字体颜色 */
+.cl666{
+  color: #666666;
+}
+.cl333{
+  color: #333333;
+}
+.cl999{
+  color: #999999;
+}
+.cleee{
+  color: #eeeeee;
+}
+/* 字体大小 */
+.fz27{
+  font-size: 27rpx;
+}
+.fz19{
+  font-size: 19rpx;
+}
+.fz30{
+  font-size: 30rpx;
+}
+.txt-cen{
+  text-align: center;
+}
+.fw{
+  font-weight: bold;
+}
+/* 背景颜色 */
+.bgf5f5f5{
+  background: #f5f5f5;
+}
+.bgeee{
+  background: #eeeeee;
+}
