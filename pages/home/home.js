@@ -32,19 +32,19 @@ Page({
     ],
     subClassList: [
       {
-        "couponSonTypeid": "2",
+        "couponSonTypeid": "0",
         "tradeId": 132,
         "mallId": "10000060080120",
         "subClassName": "推荐",
       },
       {
-        "couponSonTypeid": "2",
+        "couponSonTypeid": "1",
         "tradeId": 132,
         "mallId": "10000060080120",
         "subClassName": "配饰",
       },
       {
-        "couponSonTypeid": "3",
+        "couponSonTypeid": "2",
         "tradeId": 132,
         "mallId": "10000060080120",
         "subClassName": "服饰",
@@ -68,23 +68,31 @@ Page({
         "subClassName": "包包",
       },
       {
-        "couponSonTypeid": "5",
+        "couponSonTypeid": "6",
         "tradeId": 132,
         "mallId": "10000060080120",
         "subClassName": "包包",
       },
       {
-        "couponSonTypeid": "5",
+        "couponSonTypeid": "7",
         "tradeId": 132,
         "mallId": "10000060080120",
         "subClassName": "短裤",
       },
       {
-        "couponSonTypeid": "5",
+        "couponSonTypeid": "8",
         "tradeId": 132,
         "mallId": "10000060080120",
         "subClassName": "短裤",
       },
+    ],
+    subContentList: [
+      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "1"},
+      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "2" },
+      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "3" },
+      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "4" },
+      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "5" },
+
     ],
     activeSubClass: 0
   },

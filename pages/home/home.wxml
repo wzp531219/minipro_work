@@ -73,4 +73,13 @@
       </view>
     </scroll-view>
   </view>
+  <!-- 数据内容 -->
+  <view class="subContent">
+    <block wx:for="{{subContentList}}" wx:key="*this">
+      <view class="sunContent_item">
+        <image src="{{item.imgUrl}}"></image>
+        <view>{{item.marketPrice}}</view>
+      </view>
+    </block>
+  </view>
 </view>
