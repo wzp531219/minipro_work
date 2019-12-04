@@ -87,11 +87,11 @@ Page({
       },
     ],
     subContentList: [
-      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "1"},
-      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "2" },
-      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "3" },
-      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "4" },
-      { imgUrl: "/images/index/list.jpg", marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "5" },
+      { imgUrl: "/images/index/list.jpg", commodityName: '毛呢大衣', marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "1"},
+      { imgUrl: "/images/index/1.jpg", commodityName: '质感单肩背包', marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "2" },
+      { imgUrl: "/images/index/2.jpg", commodityName: '气质兔子耳钉', marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "3" },
+      { imgUrl: "/images/index/3.jpg", commodityName: '适合冬天的百搭毛球耳坠', marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "4" },
+      { imgUrl: "/images/index/4.jpg", commodityName: '毛呢大衣', marketPrice: "199", amountPrice: "70", poolId: "5d9fea16117068d7b2649234", sonTypeid: "5" },
 
     ],
     activeSubClass: 0
@@ -104,6 +104,14 @@ Page({
       tabTransNum : tabTransBaseNum * ind
     })
     console.log(tabTransBaseNum * ind)
+  },
+  // 进入商品详情
+  goComDetailEvent(e){
+    console.log(e)
+    let poolid = e.currentTarget.dataset.poolid;
+    wx.navigateTo({
+      url: '/pages/comdityDetail/comdityDetail?poolId=' + poolid
+    })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-searchbar": "../components/searchbar/searchbar"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fd4b4e",
+  "navigationBarTitleText": "分类",
+  "navigationBarTextStyle": "white"
 }

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/comdityDetail/comdityDetail",
     "pages/index/index",
     "pages/logs/logs",
     "pages/mine/mine",

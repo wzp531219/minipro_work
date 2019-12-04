@@ -13,6 +13,13 @@
   justify-content: space-between;
   align-items: center;
 }
+.bx{
+  box-sizing: border-box;
+}
+/* 字体位置 */
+.txt_cen{
+  text-align: center;
+}
 /* 字体颜色 */
 .cl666{
   color: #666666;
@@ -26,15 +33,24 @@
 .cleee{
   color: #eeeeee;
 }
+.clfe5746{
+  color: #fe5746;
+}
 /* 字体大小 */
 .fz27{
   font-size: 27rpx;
+}
+.fz28{
+  font-size: 28rpx;
 }
 .fz19{
   font-size: 19rpx;
 }
 .fz30{
   font-size: 30rpx;
+}
+.fz28{
+  font-size: 28rpx;
 }
 .txt-cen{
   text-align: center;
@@ -46,6 +62,16 @@
 .bgf5f5f5{
   background: #f5f5f5;
 }
+.bgf6f6f6{
+  background: #f6f6f6;
+}
 .bgeee{
   background: #eeeeee;
 }
+.bgfff{
+  background: #fff;
+}
+.bgf8f8f8{
+  background: #f8f8f8;
+}
+

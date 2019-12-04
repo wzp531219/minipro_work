@@ -1,1 +1,70 @@
 /* pages/classif/classif.wxss */
+@import "../../style/common.wxss";
+.classif_wrap{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: absolute;
+  top: 96rpx;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nav_left{
+  width: 24%;
+  height: 100%;
+  white-space: nowrap;
+}
+.nav_right{
+  width: 76%;
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.nav_left_type{
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+.nav_left_actBar{
+  background-color: rgb(252, 67, 83);
+  position: absolute;
+  top: 30rpx;
+  width: 10rpx;
+  height: 40rpx;
+}
+.classif{
+  margin: 40rpx 16rpx 0;
+}
+.classif_box{
+  overflow: hidden;
+  padding: 20rpx 20rpx 0;
+}
+.classif .title{
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 30rpx;
+  font-weight: 700;
+  color: #080808
+}
+.classif-style{
+  width: 32.8%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.list_img{
+  width: 150rpx;
+  height: 150rpx;
+}
+.list_text{
+  text-align: center;
+  font-size: 24rpx;
+  color: #686868;
+  margin-top: 10rpx;
+  height: 70rpx;
+}
