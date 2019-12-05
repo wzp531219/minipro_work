@@ -13,6 +13,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.fx-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .bx{
   box-sizing: border-box;
 }
@@ -51,6 +56,9 @@
 }
 .fz28{
   font-size: 28rpx;
+}
+.fz24{
+  font-size: 24rpx;
 }
 .txt-cen{
   text-align: center;
