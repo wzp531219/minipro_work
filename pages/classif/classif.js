@@ -51,7 +51,14 @@ Page({
         "subClassName": "男装",
       },
     ],  // 左侧导航
-    navRightCon: [], // 右侧内容
+    navRightCon: [
+      { couponSonTypeid: '0', productImgUrl: "", productTitle: "牛仔裤" },
+      { couponSonTypeid: '0', productImgUrl: "", productTitle: "牛仔裤" },
+      { couponSonTypeid: '0', productImgUrl: "", productTitle: "牛仔裤" },
+      { couponSonTypeid: '0', productImgUrl: "", productTitle: "牛仔裤" },
+      { couponSonTypeid: '0', productImgUrl: "", productTitle: "牛仔裤" },
+      { couponSonTypeid:'0', productImgUrl: "", productTitle: "牛仔裤"}
+    ], // 右侧内容
     curIndex: 0
   },
   // 改变tab栏
