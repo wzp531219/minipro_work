@@ -3,21 +3,23 @@
 .classif_wrap{
   display: flex;
   flex-direction: row;
-  height: 100%;
   position: absolute;
   top: 96rpx;
   bottom: 0;
   left: 0;
-  width: 100%;
 }
 .nav_left{
-  width: 24%;
+  width: 190rpx;
   height: 100%;
   white-space: nowrap;
 }
 .nav_right{
-  width: 76%;
+  width: 560rpx;
   height: 100%;
+}
+.nav_right_box{
+  width: 100%;
+  padding: 8rpx 0 0 44rpx;
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -25,6 +27,7 @@
   color: transparent;
 }
 .nav_left_type{
+  width: 100%;
   height: 100rpx;
   line-height: 100rpx;
   position: relative;
@@ -36,35 +39,23 @@
   width: 10rpx;
   height: 40rpx;
 }
-.classif{
-  margin: 40rpx 16rpx 0;
+.classif_pro_item{
+  width: 120rpx;
+  height: 184rpx;
+  margin-right: 60rpx;
+  margin-bottom: 34rpx;
 }
-.classif_box{
-  overflow: hidden;
-  padding: 20rpx 20rpx 0;
+.classif_pro_item:nth-child(3n){
+  margin-right: 0;
 }
-.classif .title{
-  font-size: 28rpx;
-  height: 60rpx;
-  line-height: 30rpx;
-  font-weight: 700;
-  color: #080808
+.classif_pro_icon{
+  width: 120rpx;
+  height: 120rpx;
 }
-.classif-style{
-  width: 32.8%;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.classif_pro_icon .classif_pro_img{
+  width: 100%;
+  height: 100%;
 }
-.list_img{
-  width: 150rpx;
-  height: 150rpx;
-}
-.list_text{
-  text-align: center;
-  font-size: 24rpx;
-  color: #686868;
-  margin-top: 10rpx;
-  height: 70rpx;
+.classif_pro_text{
+  margin-top: 9rpx;
 }
