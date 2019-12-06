@@ -1,2 +1,11 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view>
+  <view class="mine_wrap">
+    <view class="mine_info fx-space-bet">
+      <view>等待</view>
+      <view class="">开通会员</view>
+    </view>
+    <view class="mine_info_data"></view>
+    <view class="mine_info_modules"></view>
+  </view>
+</view>

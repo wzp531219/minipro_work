@@ -6,7 +6,7 @@
 <view class='classif_wrap'>
   <!-- 左侧导航 -->
   <scroll-view class="nav_left bgf6f6f6" scroll-y>
-    <block wx:for="{{navLeftType}}" wx:key="*this">
+    <block wx:for="{{navLeftType}}" wx:key="index">
       <view class="nav_left_type txt_cen fz28 {{curIndex == index ? 'clfe5746 bgfff fw' : 'cl666'}}" 
         data-index="{{index}}" 
         bindtap="curTabEvent">
