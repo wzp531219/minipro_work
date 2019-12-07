@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    shoppingList: [
+      { "storeName": "千库时尚服装店", "storeLogo": "/images/shop/storeLogo.png", "shopName": "夏季新款小清新显瘦连衣裙",
+      "shopUrl":"/images/shop/3.jpg", "shopColor": "浅蓝色", "reducePrice": "30", "salesPrice": "168", "marketPrice": "399", "isVoucher": "1"},
+      { "storeName": "萌萌时尚服装店", "storeLogo": "/images/shop/storeLogo.png", "shopName": "女装新款小方格子浅黄色衬衣", "shopUrl": "/images/shop/1.jpg","shopColor": "浅蓝色", "reducePrice": "50", "salesPrice": "160", "marketPrice": "199", "isVoucher": "0" },
+      { "storeName": "千库时尚服装店", "storeLogo": "/images/shop/storeLogo.png", "shopName": "初秋洋气格子衬衫", "shopUrl": "/images/shop/2.jpg", "shopColor": "图片色", "reducePrice": "0", "salesPrice": "60", "marketPrice": "99", "isVoucher": "0" }
+    ],
+    shopNum: 1
   },
 
   /**
