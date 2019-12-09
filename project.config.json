@@ -65,6 +65,13 @@
 					"id": -1,
 					"name": "pages/mine/mine",
 					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopTrolley/shopTrolley",
+					"pathName": "pages/shopTrolley/shopTrolley",
 					"scene": null
 				}
 			]

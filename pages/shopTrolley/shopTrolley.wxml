@@ -1,2 +1,70 @@
 <!--pages/shopTrolley/shopTrolley.wxml-->
-<text>pages/shopTrolley/shopTrolley.wxml</text>
+<!-- 提示 -->
+<view class="bgf5f5f5">
+  <scroll-view scroll-y>
+    <view class="shopTip fx-space-bet bg484a51">
+      <view class="clfae067">开通VIP会员可立省46元</view>
+      <view class="right_arrow">
+        <image class="right_arrow_img" src="/images/shop/right_arrow.png"></image>
+      </view>
+    </view>
+    <!-- 购物商品 -->
+    <view class="shopping_wrap">
+      <block wx:for="{{shoppingList}}" wx:key="*this">
+        <view class="shopping_item bgfff bx">
+          <!-- 店名称 是否可以领券 -->
+          <view class="shoping_top fx-space-bet">
+            <view class="fx-align-cen">
+              <image class="storeLogo" src="{{item.storeLogo}}"></image>
+              <text class="fz26">{{item.storeName}}</text>
+            </view>
+            <view class="vouchers_btn bgffeced clfc4353 fz22 txt_cen" wx:if="{{item.isVoucher == 1}}">领券</view>
+          </view>
+          <view class="shopInfo fx-align-cen">
+            <view class="isSelect">
+              <image class="isSelect_icon" src="/images/shop/unSelect.png"></image>
+            </view>
+            <view class="shop_pic">
+              <image class="shop_Img" src='{{item.shopUrl}}'></image>
+            </view>
+            <view class="shopInfo_detail">
+              <!-- 商品名称 -->
+              <view class="cl333 shopName">{{item.shopName}}</view>
+              <view class="cl999 bgf5f5f5 shopColor_btn fx-cen fz24">{{item.shopColor}}
+                <image class="down_arrow" src="/images/shop/down_arrow.png"></image>
+              </view>
+              <view class="clfc4353 fz20 fw" style='height:36rpx;'>
+                <text wx:if="{{item.reducePrice!=0}}">已降价{{item.reducePrice}}元</text>
+              </view>
+              <!-- 价格 添加减少  -->
+              <view class="fx-space-bet">
+                <view>
+                  <text class="clfc4353 fw">￥{{item.salesPrice}}</text>
+                  <text class="marketPrice cl999 line_th">￥{{item.marketPrice}}</text>
+                </view>
+                <view class="addAreduce fx">
+                  <view class="{{shopNum <= 1 ? 'clccc': 'cl333'}} reduceBtn txt_cen">-</view>
+                  <view class="txt_cen addAreduce_shopNum">{{shopNum}}</view>
+                  <view class="cl333 addBtn txt_cen">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 结算 -->
+    <view class="fx-space-bet settlement_wrap bgfff bx">
+      <view class="fx-align-cen">
+        <view class="isSelect">
+          <image class="isSelect_icon" src="/images/shop/unSelect.png"></image>
+        </view>
+        <text class="fz28 cl999">全选({{}})</text>
+      </view>
+      <view class="fx">
+        <view class="cl333 shop_total">合计：<text class="clfc4353">￥{{}}</text></view>
+        <view class="settlement_btn txt_cen">结算</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

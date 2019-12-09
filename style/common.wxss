@@ -7,6 +7,11 @@
   justify-content: center;
   align-items: center;
 }
+.fx-align-cen{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 .fx-space-bet{
   display: flex;
   flex-direction: row;
@@ -47,6 +52,15 @@
 .clfe5746{
   color: #fe5746;
 }
+.clfae067{
+  color: #fae067;
+}
+.clfc4353{
+  color: #fc4353;
+}
+.clccc{
+  color: #ccc;
+}
 /* 字体大小 */
 .fz26{
   font-size: 26rpx;
@@ -69,6 +83,12 @@
 .fz24{
   font-size: 24rpx;
 }
+.fz22{
+  font-size: 22rpx;
+}
+.fz20{
+  font-size: 20rpx;
+}
 .txt-cen{
   text-align: center;
 }
@@ -90,5 +110,14 @@
 }
 .bgf8f8f8{
   background: #f8f8f8;
+}
+.bg484a51{
+  background: #484a51;
+}
+.bgffeced{
+  background: #ffeced;
+}
+.line_th{
+  text-decoration:line-through
 }
 
