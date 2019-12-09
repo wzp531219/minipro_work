@@ -1,11 +1,61 @@
 <!--pages/mine/mine.wxml-->
-<view>
-  <view class="mine_wrap">
+<view class="line_top bgf6f6f6 mine_con">
+  <view class="mine_wrap bx">
     <view class="mine_info fx-space-bet">
-      <view>等待</view>
-      <view class="">开通会员</view>
+      <view class="fx">
+        <view class="headbox">
+          <open-data type="userAvatarUrl" class="mine-header-img "></open-data>
+          <!-- <image mode="widthFix" src="../images/mine/user_headshots.png" class="mine-header-img"></image> -->
+        </view>
+        <view class="userNickName">
+          <open-data type="userNickName" class="fz15 clfff"></open-data>
+          <!-- <text class="dp fz12 cl989898">{{memberAccount}}</text> -->
+        </view>
+      </view>
+      <view class="clfff openVip txt_cen fz26">开通会员</view>
     </view>
-    <view class="mine_info_data"></view>
-    <view class="mine_info_modules"></view>
+    <view class="mine_info_data fx-cen">
+      <view class="mine_info_item txt_cen clfff">
+        <view class="fz32">178</view>
+        <view class="fz28">足迹</view>
+      </view>
+      <view class="spaceLine"></view>
+      <view class="mine_info_item txt_cen clfff">
+        <view class="fz32">18</view>
+        <view class="fz28">收藏</view>
+      </view>
+      <view class="spaceLine"></view>
+      <view class="mine_info_item txt_cen clfff">
+        <view class="fz32">29</view>
+        <view class="fz28">关注</view>
+      </view>
+      <view class="spaceLine"></view>
+      <view class="mine_info_item txt_cen clfff">
+        <view class="fz32">266</view>
+        <view class="fz28">优惠券</view>
+      </view>
+    </view>
+    <view class="mine_info_modules bx fx-cen">
+      <block wx:for="{{mineMod}}" wx:key="*this">
+        <view class="mine_info_item  clfff">
+          <view class="fz32 mine_info_mod_icon">
+            <image class="mine_info_mod_img" mode="aspectFit" src="{{item.imgUrl}}"></image>
+          </view>
+          <view class="fz26 cl333 txt_cen mine_info_mod_tit">{{item.tit}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="mine_info_list">
+    <mp-cells>
+      <block wx:for="{{mineList}}">
+        <mp-cell title="{{item.tit}}" link>
+          <view slot="footer">
+            <view style="display: inline-block;vertical-align:middle; font-size:17px" class="fz28" wx:if="{{item.desc}}">{{item.desc}}</view>
+            <!-- <mp-badge style="margin-left: 5px;margin-right: 5px;" ext-class="blue" /> -->
+          </view>
+        </mp-cell>
+      </block>
+    </mp-cells>
   </view>
 </view>

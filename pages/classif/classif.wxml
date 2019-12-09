@@ -1,9 +1,11 @@
 <!-- 搜索 -->
+<view class="line_top"></view>
 <view class="page__bd">
   <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
 </view>
+<!-- <view class="line_top"></view> -->
 <!-- 分类 -->
-<view class='classif_wrap'>
+<view class='classif_wrap line_top'>
   <!-- 左侧导航 -->
   <scroll-view class="nav_left bgf6f6f6" scroll-y>
     <block wx:for="{{navLeftType}}" wx:key="index">

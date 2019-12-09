@@ -21,6 +21,9 @@
 .bx{
   box-sizing: border-box;
 }
+.line_top{
+  border-top: 2rpx solid #ebebeb;
+}
 /* 字体位置 */
 .txt_cen{
   text-align: center;
@@ -38,10 +41,16 @@
 .cleee{
   color: #eeeeee;
 }
+.clfff{
+  color: #fff;
+}
 .clfe5746{
   color: #fe5746;
 }
 /* 字体大小 */
+.fz26{
+  font-size: 26rpx;
+}
 .fz27{
   font-size: 27rpx;
 }
