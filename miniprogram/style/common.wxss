@@ -27,7 +27,13 @@
   box-sizing: border-box;
 }
 .line_top{
-  border-top: 2rpx solid #ebebeb;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  background: #ebebeb;
+  height: 2rpx;
+  z-index: 10;
 }
 /* 字体位置 */
 .txt_cen{
@@ -89,6 +95,9 @@
 .fz20{
   font-size: 20rpx;
 }
+.fz32{
+  font-size: 32rpx;
+}
 .txt-cen{
   text-align: center;
 }
@@ -118,6 +127,6 @@
   background: #ffeced;
 }
 .line_th{
-  text-decoration:line-through
+  text-decoration:line-through;
 }
 

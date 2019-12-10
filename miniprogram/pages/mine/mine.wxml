@@ -48,14 +48,15 @@
   </view>
   <view class="mine_info_list">
     <mp-cells>
-      <block wx:for="{{mineList}}">
-        <mp-cell title="{{item.tit}}" link>
+      <block wx:for="{{mineList}}" wx:key='*this'>
+        <mp-cell link url="../index" class='fz32' title="{{item.tit}}">
+          <image slot="icon" src="{{item.icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
           <view slot="footer">
-            <view style="display: inline-block;vertical-align:middle; font-size:17px" class="fz28" wx:if="{{item.desc}}">{{item.desc}}</view>
-            <!-- <mp-badge style="margin-left: 5px;margin-right: 5px;" ext-class="blue" /> -->
+            <view style="display: inline-block;vertical-align:middle;" class="fz28" wx:if="{{item.desc}}">{{item.desc}}</view>
           </view>
         </mp-cell>
       </block>
     </mp-cells>
   </view>
 </view>
+

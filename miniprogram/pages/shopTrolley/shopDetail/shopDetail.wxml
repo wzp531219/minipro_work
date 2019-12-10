@@ -1,0 +1,16 @@
+<!--pages/shopTrolley/shopDetail/shopDetail.wxml-->
+<view class="line_top"></view>
+<view class="shopDetail_wrap">
+  <view class="shopDetail_box">
+    <view class="shopDetail_img">
+      <image src="/images/shop/detail.png"></image>
+    </view>
+    <view class="fz30"></view>
+    <view>￥<text class="fz32">{{}}</text><text class="fz28"></text></view>
+  </view>
+  <view>
+    <view>促销</view>
+    <!-- <view>{{"满"++"减"}}</view> -->
+  </view>
+  <view></view>
+</view>

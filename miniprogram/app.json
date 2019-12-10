@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/classif/classif",
-    "pages/shopTrolley/shopTrolley"
+    "pages/shopTrolley/shopTrolley",
+    "pages/shopTrolley/shopDetail/shopDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

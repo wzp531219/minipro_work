@@ -1,4 +1,6 @@
 {
+	"cloudfunctionRoot": "cloudfunctions/",
+	"miniprogramRoot": "miniprogram/",
 	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
@@ -72,6 +74,13 @@
 					"id": -1,
 					"name": "pages/shopTrolley/shopTrolley",
 					"pathName": "pages/shopTrolley/shopTrolley",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopTrolley/shopDetail/shopDetail",
+					"pathName": "pages/shopTrolley/shopDetail/shopDetail",
 					"scene": null
 				}
 			]

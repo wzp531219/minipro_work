@@ -3,9 +3,8 @@
 <view class="page__bd">
   <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
 </view>
-<!-- <view class="line_top"></view> -->
 <!-- 分类 -->
-<view class='classif_wrap line_top'>
+<view class='classif_wrap'>
   <!-- 左侧导航 -->
   <scroll-view class="nav_left bgf6f6f6" scroll-y>
     <block wx:for="{{navLeftType}}" wx:key="index">
@@ -15,7 +14,6 @@
         {{item.subClassName}}
          <view class="{{curIndex == index ? 'nav_left_actBar' : ''}} "></view>
       </view>
-     
     </block>
   </scroll-view>
   <!-- 右侧产品内容 -->

@@ -1,24 +1,16 @@
-// pages/mine/mine.js
+// pages/shopTrolley/shopDetail/shopDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mineMod: [
-      { "id": 0, "tit": "待付款", "imgUrl": "/images/mine/mine_mod.png" },
-      { "id": 1, "tit": "待发货", "imgUrl": "/images/mine/mine_mod1.png" },
-      { "id": 2, "tit": "待收货", "imgUrl": "/images/mine/mine_mod2.png" },
-      { "id": 3, "tit": "售后", "imgUrl": "/images/mine/mine_mod3.png" },
-      { "id": 4, "tit": "全部订单", "imgUrl": "/images/mine/mine_mod4.png"}
-    ],
-    mineList: [
-      { "id": 0, "icon": "", "tit": "每日签到", "desc": "去签到" },
-      { "id": 1, "icon": "", "tit": "充值中心", "desc": "" },
-      { "id": 2, "icon": "", "tit": "邀请有礼", "desc": "最高得100元" },
-      { "id": 3, "icon": "", "tit": "超级拼团", "desc": "" },
-      { "id": 4, "icon": "", "tit": "设置中心", "desc": "" }
-    ]
+    detailObj: {
+      "imgUrl": "/images/shop/detail.png",
+      "shopName": '新品学院风百搭时尚同情优惠格子亲肤柔和衬衫',
+      "priceReNotice": "1",
+      "shopPrice": "109"
+    }
   },
 
   /**
