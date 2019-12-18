@@ -8,7 +8,7 @@ Page({
    */
   data: {
     imgUrls: [
-      "https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640",
+      "/images/index/1.png",
       "https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640",
       "https://images.unsplash.com/photo-1551446591-142875a901a1?w=640"
     ],
@@ -110,8 +110,14 @@ Page({
     console.log(e)
     let poolid = e.currentTarget.dataset.poolid;
     wx.navigateTo({
-      url: '/pages/comdityDetail/comdityDetail?poolId=' + poolid
+      url: '/pages/shopTrolley/shopDetail/shopDetail?poolId=' + poolid
     })
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: '首页',
+      path: '/pages/home/home'
+    }
   },
   /**
    * 生命周期函数--监听页面加载

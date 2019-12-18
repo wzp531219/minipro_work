@@ -81,6 +81,20 @@
 					"id": -1,
 					"name": "pages/shopTrolley/shopDetail/shopDetail",
 					"pathName": "pages/shopTrolley/shopDetail/shopDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopTrolley/shopDetail/shopDetail",
+					"pathName": "pages/shopTrolley/shopDetail/shopDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/purchaseOrder/purchaseOrder",
+					"pathName": "pages/purchaseOrder/purchaseOrder",
 					"scene": null
 				}
 			]

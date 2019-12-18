@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mp-halfScreenDialog": "../../components/half-screen-dialog/half-screen-dialog",
+    "mp-cells": "../components/cells/cells",
+    "mp-cell": "../components/cell/cell"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "支付订单",
+  "navigationBarTextStyle": "black"
+}

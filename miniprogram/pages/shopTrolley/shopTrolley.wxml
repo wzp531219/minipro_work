@@ -1,7 +1,7 @@
 <!--pages/shopTrolley/shopTrolley.wxml-->
 <!-- 提示 -->
 <view class="line_top"></view>
-<view class="bgf5f5f5 ">
+<view class="bgf5f5f5 " wx:if="{{shoppingList.length > 0}}">
   <scroll-view scroll-y>
     <view class="shopTip fx-space-bet bg484a51">
       <view class="clfae067 fz28">开通VIP会员可立省46元</view>
@@ -10,62 +10,80 @@
       </view>
     </view>
     <!-- 购物商品 -->
-    <view class="shopping_wrap">
-      <block wx:for="{{shoppingList}}" wx:key="*this">
-        <view class="shopping_item bgfff bx">
-          <!-- 店名称 是否可以领券 -->
-          <view class="shoping_top fx-space-bet" bindtap="goShopDetail">
-            <view class="fx-align-cen">
-              <image class="storeLogo" src="{{item.storeLogo}}"></image>
-              <text class="fz26">{{item.storeName}}</text>
-            </view>
-            <view class="vouchers_btn bgffeced clfc4353 fz22 txt_cen" wx:if="{{item.isVoucher == 1}}">领券</view>
-          </view>
-          <view class="shopInfo fx-align-cen">
-            <view class="isSelect" data-isSelect="{{item.isSelect}}">
-              <image data-shopId="{{item.shopId}}" bindtap="selectBtn" class="isSelect_icon" src="{{item.isSelect ? '/images/shop/select.png' : '/images/shop/unSelect.png'}}"></image>
-            </view>
-            <view class="shop_pic" bindtap="goShopDetail">
-              <image class="shop_Img" src='{{item.shopUrl}}'></image>
-            </view>
-            <view class="shopInfo_detail">
-              <!-- 商品名称 -->
-              <view class="cl333 shopName fz28" bindtap="goShopDetail">{{item.shopName}}</view>
-              <view class="cl999 bgf5f5f5 shopColor_btn fx-cen fz22">{{item.shopColor}}
-                <image class="down_arrow" src="/images/shop/down_arrow.png"></image>
+    <checkbox-group bindchange='checkboxChange'>
+      <view class="shopping_wrap">
+        <block wx:for="{{shoppingList}}" wx:key="*this">
+          <view class="shopping_item bgfff bx">
+            <!-- 店名称 是否可以领券 -->
+            <view class="shoping_top fx-space-bet" bindtap="goShopDetail">
+              <view class="fx-align-cen">
+                <image class="storeLogo" src="{{item.storeLogo}}"></image>
+                <text class="fz26">{{item.storeName}}</text>
               </view>
-              <view class="clfc4353 fz20 fw" style='height:36rpx;'>
-                <text wx:if="{{item.reducePrice!=0}}">已降价{{item.reducePrice}}元</text>
+              <view class="vouchers_btn bgffeced clfc4353 fz22 txt_cen" wx:if="{{item.isVoucher == 1}}">领券</view>
+            </view>
+            <view class="shopInfo fx-align-cen">
+              <checkbox class="isSelect" value="{{item.shopId}}" checked="{{item.selected}}"></checkbox>
+              <!-- <view class="isSelect" data-isSelect="{{item.isSelect}}">
+                <image data-shopId="{{item.shopId}}" bindtap="selectBtn" class="isSelect_icon" src="{{item.isSelect ? '/images/shop/select.png' : '/images/shop/unSelect.png'}}"></image>
+              </view> -->
+              <view class="shop_pic" bindtap="goShopDetail">
+                <image class="shop_Img" src='{{item.shopUrl}}'></image>
               </view>
-              <!-- 价格 添加减少  -->
-              <view class="fx-space-bet">
-                <view>
-                  <text class="clfc4353 fw fz28">￥{{item.salesPrice}}</text>
-                  <text class="marketPrice cl999 line_th fz28">￥{{item.marketPrice}}</text>
+              <view class="shopInfo_detail">
+                <!-- 商品名称 -->
+                <view class="cl333 shopName fz28" bindtap="goShopDetail">{{item.shopName}}</view>
+                <view class="cl999 bgf5f5f5 shopColor_btn fx-cen fz22">{{item.shopColor}}
+                  <image class="down_arrow" src="/images/shop/down_arrow.png"></image>
                 </view>
-                <view class="addAreduce fx">
-                  <view class="{{shopNum <= 1 ? 'clccc': 'cl333'}} reduceBtn txt_cen">-</view>
-                  <view class="txt_cen addAreduce_shopNum fz28">{{shopNum}}</view>
-                  <view class="cl333 addBtn txt_cen">+</view>
+                <view class="clfc4353 fz20 fw" style='height:36rpx;'>
+                  <text wx:if="{{item.reducePrice!=0}}">已降价{{item.reducePrice}}元</text>
+                </view>
+                <!-- 价格 添加减少  -->
+                <view class="fx-space-bet">
+                  <view>
+                    <text class="clfc4353 fw fz28">￥{{item.salesPrice}}</text>
+                    <text class="marketPrice cl999 line_th fz28">￥{{item.marketPrice}}</text>
+                  </view>
+                  <view class="addAreduce fx">
+                    <view class="{{shopNum <= 1 ? 'clccc': 'cl333'}} reduceBtn txt_cen" data-shopId='{{item.shopId}}' bindtap="minusOrders">-</view>
+                    <view class="txt_cen addAreduce_shopNum fz28">{{item.quantity}}</view>
+                    <view class="cl333 addBtn txt_cen" data-shopId='{{item.shopId}}' bindtap="addOrders">+</view>
+                  </view>
                 </view>
               </view>
             </view>
           </view>
-        </view>
-      </block>
-    </view>
+        </block>
+      </view>
+    </checkbox-group>
     <!-- 结算 -->
-    <view class="fx-space-bet settlement_wrap bgfff bx">
-      <view class="fx-align-cen" bindtap="fullSelect">
-        <view class="isSelect">
-          <image class="isSelect_icon" src="{{fullSelect ? '/images/shop/select.png' : '/images/shop/unSelect.png' }}"></image>
+    <checkbox-group bindchange='checkAll'>
+      <view class="fx-space-bet settlement_wrap bgfff bx">
+        <view class="fx-align-cen">
+          <view class="isSelect">
+            <!-- <image class="isSelect_icon" src="{{selectedAll ? '/images/shop/select.png' : '/images/shop/unSelect.png' }}"></image> -->
+            <label for="boxAll">
+              <checkbox checked="{{selectedAll}}" id="boxAll" hidden></checkbox>
+              <icon type="{{selectedAll == true ? 'success' : 'circle'}}" color="{{selectedAll == true ? '#E4393C' : ''}}"  data-value="{{item.shopId}}"></icon>
+            </label>
+          </view>
+          <text class="fz28 cl999">全选</text>
         </view>
-        <text class="fz28 cl999">全选({{fullSelect ? fullNum : '0'}})</text>
+        <view class="fx">
+          <view class="cl333 shop_total fz28">合计：
+            <text class="clfc4353">￥{{totalPrice}}</text>
+          </view>
+          <view class="settlement_btn txt_cen fz28 clfff">结算</view>
+        </view>
       </view>
-      <view class="fx">
-        <view class="cl333 shop_total fz28">合计：<text class="clfc4353">￥{{}}</text></view>
-        <view class="settlement_btn txt_cen fz28 clfff">结算</view>
-      </view>
-    </view>
+    </checkbox-group>
   </scroll-view>
+</view>
+<view wx:else>
+  <view class="shop_notcont">
+    <text class="iconfont icon-ziyuan"></text>
+    <text class="cont">亲，购物车空空如也</text>
+    <view bindtap="goShopping" class="flow-btn-min">去逛逛</view>
+  </view>
 </view>

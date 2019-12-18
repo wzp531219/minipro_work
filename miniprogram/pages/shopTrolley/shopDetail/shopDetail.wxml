@@ -1,16 +1,82 @@
 <!--pages/shopTrolley/shopDetail/shopDetail.wxml-->
 <view class="line_top"></view>
-<view class="shopDetail_wrap">
-  <view class="shopDetail_box">
-    <view class="shopDetail_img">
-      <image src="/images/shop/detail.png"></image>
+<view class="shopDetail_wrap bgf5f5f5">
+  <scroll-view scroll-y="true" style="margin-bottom: 98rpx;">
+    <view class="shopDetail_box bgfff">
+      <view class="shopDetail_imgBox">
+        <!-- <image class="shopDetail_img" src="/images/shop/detail.png"></image> -->
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="shopDetail_img" indicator-color="#f2f2f2" indicator-active-color="#c81623">
+          <block wx:for="{{imgUrls}}" wx:key="*this">
+            <swiper-item>
+              <image src="{{item}}" class="shopDetail_img"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="shopDetail_Info">
+        <view class="fz30 shopDetail_name">千库时尚服装店</view>
+        <view class="clfc4353 shopDetail_price">￥
+          <text class="fz32 fw">{{111}}</text>
+          <text class="fz28 cl999 line_th shopDetail_marprice">￥299</text>
+        </view>
+      </view>
     </view>
-    <view class="fz30"></view>
-    <view>￥<text class="fz32">{{}}</text><text class="fz28"></text></view>
+    <view class="bgfff fx-space-bet promotion">
+      <view class="cl999 fz30">促销</view>
+      <view class="fz30 clfc4353">{{"满200减20"}}</view>
+    </view>
+    <view class="desc fz32 cl999 bgfff">已选浅色衬衣</view>
+    <view class="condition bgfff cl999">
+      <text class="conditionName  fz32">颜色</text>
+      <view class="tips fz30">
+        <view class="tip select">浅白色</view>
+        <view class="tip">黄色</view>
+        <view class="tip">浅蓝色</view>
+        <view class="tip">粉色</view>
+      </view>
+    </view>
+    <view class="condition bgfff">
+      <text class="conditionName fz32">尺寸</text>
+      <view class="tips fz30">
+        <view class="tip select">S</view>
+        <view class="tip">M</view>
+        <view class="tip">L</view>
+        <view class="tip">XL</view>
+      </view>
+    </view>
+    <view class="condition bgfff">
+      <view class="conditionName">数量</view>
+      <view class="priceInfo fx">
+        <view class="minus txt_cen">-</view>
+        <view class="count txt_cen">1</view>
+        <view class="add txt_cen">+</view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>
+<!-- 底部加入购物车、立即购买、客服、收藏 -->
+<view class="fixed bot_oper fx-space-bet bgfff">
+  <view class="fx bot_left">
+    <view class="customer">
+      <form class="form" report-submit="true" bindsubmit="saveFormId">
+        <button class="btn-contact" open-type='contact' session-from="weapp">
+          <view class="customer_iconbox">
+            <image class="customer_icon" src="/images/shop/customer.png"></image>
+          </view>
+          <view class="fz20 cl999 txt_cen"> 客服</view>
+        </button>
+      </form>
+    </view>
+    <view class="collection txt_cen fz20 cl999">
+      <view class="collection_iconbox">
+        <image class="customer_icon" src="/images/shop/collection.png"></image>
+      </view>
+      <view class="fz20 cl999 txt_cen">收藏</view>
+    </view>
   </view>
-  <view>
-    <view>促销</view>
-    <!-- <view>{{"满"++"减"}}</view> -->
+  <view class="fx">
+    <view class="addShop txt_cen clfff bg333 fz28" bindtap="addGood">加入购物车</view>
+    <view class="buyNow txt_cen clfff liner_gra fz28" bindtap="buyEvent">立即购买</view>
   </view>
-  <view></view>
 </view>

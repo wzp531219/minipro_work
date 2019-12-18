@@ -1,0 +1,106 @@
+<!--pages/purchaseOrder/purchaseOrder.wxml-->
+<!-- <text>pages/purchaseOrder/purchaseOrder.wxml</text> -->
+<view class="line_top"></view>
+<view class="hr_line"></view>
+<!-- 用户地址 -->
+<view class="user_address bx fx-space-bet">
+  <view>
+    <view class="fz30 cl333 fx">
+      <text>陈某某</text>
+      <text class="user_tel">18614053125</text>
+      <view class="clfff fz24 txt_cen addressType">家庭住址</view>
+    </view>
+    <view class="cl999 fz28">广东省广州市天河区华夏路沿江小区1204号</view>
+  </view>
+  <view class="right_arrow_box">
+    <image class="right_arrow_icon" src="/images/shop/right_arr.png"></image>
+  </view>
+</view>
+<view class="hr_line"></view>
+<!-- 需购买商品 -->
+<view class="bgf5f5f5 containers">
+  <view class=""></view>
+  <view class="shopping_wrap">
+    <block wx:for="{{shoppingList}}" wx:key="*this">
+      <view class="shopping_item bgfff bx">
+        <!-- 店名称 是否可以领券 -->
+        <view class="shoping_top fx-space-bet" bindtap="goShopDetail">
+          <view class="fx-align-cen">
+            <image class="storeLogo" src="{{item.storeLogo}}"></image>
+            <text class="fz26">{{item.storeName}}</text>
+          </view>
+          <view class="vouchers_btn bgffeced clfc4353 fz22 txt_cen" wx:if="{{item.isVoucher == 1}}">领券</view>
+        </view>
+        <view class="shopInfo fx-align-cen">
+          <!-- <checkbox class="isSelect" value="{{item.shopId}}" checked="{{item.selected}}"></checkbox> -->
+          <!-- <view class="isSelect" data-isSelect="{{item.isSelect}}">
+                <image data-shopId="{{item.shopId}}" bindtap="selectBtn" class="isSelect_icon" src="{{item.isSelect ? '/images/shop/select.png' : '/images/shop/unSelect.png'}}"></image>
+              </view> -->
+          <view class="shop_pic" bindtap="goShopDetail">
+            <image class="shop_Img" src='{{item.shopUrl}}'></image>
+          </view>
+          <view class="shopInfo_detail">
+            <!-- 商品名称 -->
+            <view class="cl333 shopName fz28" bindtap="goShopDetail">{{item.shopName}}</view>
+            <view class="cl999 bgf5f5f5 shopColor_btn fx-cen fz22">{{item.shopColor}}
+              <image class="down_arrow" src="/images/shop/down_arrow.png"></image>
+            </view>
+            <view class="clfc4353 fz20 fw" style='height:36rpx;'>
+              <text wx:if="{{item.reducePrice!=0}}">已降价{{item.reducePrice}}元</text>
+            </view>
+            <!-- 价格 添加减少  -->
+            <view class="fx-space-bet">
+              <view>
+                <text class="clfc4353 fw fz28">￥{{item.salesPrice}}</text>
+                <text class="marketPrice cl999 line_th fz28">￥{{item.marketPrice}}</text>
+              </view>
+              <view class="addAreduce fx">
+                <view class="{{shopNum <= 1 ? 'clccc': 'cl333'}} reduceBtn txt_cen" data-shopId='{{item.shopId}}' bindtap="minusOrders">-</view>
+                <view class="txt_cen addAreduce_shopNum fz28">{{item.quantity}}</view>
+                <view class="cl333 addBtn txt_cen" data-shopId='{{item.shopId}}' bindtap="addOrders">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="space_line"></view>
+    </block>
+  </view>
+  <view class="bgfff fx-space-bet picker_item">
+    <view class="cl999 fz28">
+      配送方式
+    </view>
+    <view class="right_arrow_box">
+      <image class="right_arrow_icon" src="/images/shop/right_arr.png"></image>
+    </view>
+  </view>
+  <view class="bgfff fx-space-bet picker_item">
+    <view class="cl999 fz28">
+      订单备注
+    </view>
+    <view class="right_arrow_box">
+      <image class="right_arrow_icon" src="/images/shop/right_arr.png"></image>
+    </view>
+  </view>
+  <view class="hr_line"></view>
+  <view class="bgfff fx-space-bet picker_item">
+    <view class="cl999 fz28">
+      发票信息
+    </view>
+    <view class="fx-cen">
+      <view class="fz26 cl999">个人纸质发票 不开发票</view>
+      <view class="right_arrow_box">
+        <image class="right_arrow_icon" src="/images/shop/right_arr.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="hr_line"></view>
+</view>
+<view class="fx-space-bet footer_pay bgfff bx">
+  <view>
+    <text class="cl333 fz32">合计:</text>
+    <!-- <text class="clfc4353 fz32">{{totalPrice}}</text> -->
+    <text class="clfc4353 fz32">388</text>
+  </view>
+  <view class="liner_gra pay_btn fz28 clfff txt_cen">去支付</view>
+</view>
